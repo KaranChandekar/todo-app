@@ -1,4 +1,5 @@
 import { ITask } from "@/types/tasks";
+import Task from "./Task";
 
 interface TodoListProps {
   tasks: ITask[];
@@ -16,10 +17,7 @@ const TodoList: React.FC<TodoListProps> = ({ tasks }) => {
         </thead>
         <tbody className="text-gray-700">
           {tasks.map((task) => (
-            <tr key={task.id}>
-              <td className="p-4">{task.text}</td>
-              <td className="p-4">Football</td>
-            </tr>
+            <Task key={task.id} task={task} />
           ))}
         </tbody>
       </table>
