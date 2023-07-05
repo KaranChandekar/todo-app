@@ -1,10 +1,25 @@
 "use client";
 import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
-import { useState } from "react";
+import { FormEventHandler, useState } from "react";
+import { addTodo } from "@/api";
+import { useRouter } from "next/navigation";
 
 const AddTask = () => {
+  const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [newTaskValue, setNewTaskValue] = useState<string>("");
+
+  const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+    await addTodo({
+      id: "5",
+      text: newTaskValue,
+    });
+    setNewTaskValue("");
+    setModalOpen(false);
+    router.refresh();
+  };
 
   return (
     <div>
@@ -16,10 +31,12 @@ const AddTask = () => {
       </button>
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-        <form>
+        <form onSubmit={handleSubmitNewTodo}>
           <h3 className="text-lg font-bold text-gray-700">Add New Task</h3>
           <div className="flex gap-2 mt-5">
             <input
+              value={newTaskValue}
+              onChange={(e) => setNewTaskValue(e.target.value)}
               type="text"
               placeholder="Type here"
               className="w-full px-3 py-2 border rounded-md outline-none"
