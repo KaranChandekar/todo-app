@@ -73,7 +73,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         />
         <Modal modalOpen={openModalDeleted} setModalOpen={setOpenModalDeleted}>
           <svg
-            className="w-8 h-8 mx-auto mb-4 text-gray-400"
+            className="w-10 h-10 mx-auto mb-4 text-gray-400"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -90,19 +90,13 @@ const Task: React.FC<TaskProps> = ({ task }) => {
           <h3 className="mb-5 text-lg font-normal text-center text-gray-7000">
             Are you sure you want to delete this task?
           </h3>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center">
             <button
               onClick={() => handleDeleteTask(task.id)}
               type="submit"
-              className="text-white bg-red-600 hover:bg-red-700 focus:outline-none font-semibold rounded-md px-4 py-2.5"
+              className="px-4 py-2.5 font-semibold text-white capitalize ease-in-out focus:outline-none bg-purple-600 rounded-md hover:bg-purple-700"
             >
               Yes, I'm sure
-            </button>
-            <button
-              className="px-4 py-2.5 font-semibold text-white capitalize ease-in-out focus:outline-none bg-purple-600 rounded-md hover:bg-purple-700"
-              type="submit"
-            >
-              No, cancel
             </button>
           </div>
         </Modal>
