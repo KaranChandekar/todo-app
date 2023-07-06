@@ -96,7 +96,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
               type="submit"
               className="px-4 py-2.5 font-semibold text-white capitalize ease-in-out focus:outline-none bg-purple-600 rounded-md hover:bg-purple-700"
             >
-              Yes, I'm sure
+              Yes, I&apos;m sure
             </button>
           </div>
         </Modal>
