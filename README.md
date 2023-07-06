@@ -56,4 +56,4 @@ The Task Management App is open source and released under the [MIT License](http
 
 ## 📧 Contact
 
-For any questions, suggestions, or feedback, feel free to reach out to me at your-email@example.com. I'd love to hear from you!
+For any questions, suggestions, or feedback, feel free to reach out to me at karanchandekar431@gmail.com. I'd love to hear from you!
